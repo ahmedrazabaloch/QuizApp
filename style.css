@@ -37,6 +37,7 @@ body {
 /* <!-- Question Displayed --> */
 
 .quiz_container {
+  user-select: none;
   width: 550px;
   background-color: #fff;
   border-radius: 5px;
@@ -57,7 +58,6 @@ body {
 .quiz_title {
   font-size: 24px;
   font-weight: 500;
-  user-select: none;
 }
 .count_down {
   background-color: #007bff;
@@ -88,7 +88,6 @@ body {
   font-weight: 600;
   font-size: 24px;
   padding-bottom: 10px;
-  user-select: none;
 }
 .options_list {
   display: flex;
@@ -103,4 +102,36 @@ body {
   margin-bottom: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+.options:hover {
+  color: #004085;
+  background: #cce5ff;
+  border: 1px solid #b8daff;
+}
+/* <!-- Quiz Footer Next Button --> */
+.footer_container {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.qustion_Count {
+  display: flex;
+  gap: 5px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.next_Btn button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.next_Btn button:hover {
+  color: #fff;
+  background: #004085;
 }
