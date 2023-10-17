@@ -60,21 +60,24 @@ body {
   font-weight: 500;
 }
 .count_down {
-  background-color: #007bff;
+  background-color: #cce5ff;
   display: flex;
   justify-content: space-between;
   padding: 5px 10px;
   border-radius: 5px;
-  color: #fff;
+  color: #000;
   align-items: center;
+  font-weight: 500;
 }
 .count_down > :last-child {
+  color: #fff;
   margin-left: 10px;
-  background-color: black;
+  background-color: #000;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
-  width: 50px;
+  width: 40px;
+  font-size: 16px;
 }
 /* <!-- Quiz Quesitons/Answer --> */
 
@@ -102,6 +105,8 @@ body {
   margin-bottom: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  gap: 10px;
 }
 .options:hover {
   color: #004085;
