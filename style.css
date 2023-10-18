@@ -81,7 +81,7 @@ body {
 }
 /* <!-- Quiz Quesitons/Answer --> */
 
-.qustions_container {
+#qustions_container {
   padding: 20px 30px;
   box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
 }
