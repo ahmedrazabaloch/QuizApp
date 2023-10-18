@@ -45,8 +45,11 @@ var questions = [
   },
 ];
 
+var countDown = document.getElementById("timer");
 var index = 0;
 var score = 0;
+var counter;
+
 
 function renderQuestions() {
   var question = document.getElementById("qustionsContainer");
@@ -80,3 +83,11 @@ function renderQuestions() {
 }
 
 renderQuestions();
+startTimer(10)
+function startTimer(time) {
+    counter = setInterval(timer, 1000);
+  function timer() {
+    countDown.textContent = time;
+    time--;
+  }
+}
