@@ -25,31 +25,20 @@
       </header>
       <!-- Quiz Quesitons/Answer -->
       <main>
-        <div id="qustions_container">
-          <div id="qustions">
-            <span>1.</span>
-            <p>What does HTML stand for?</p>
-          </div>
-          <div class="options_list">
-            <label for="option1" class="options"><input type="checkbox" id="option1">Hyper Text Preprocessor<span class="checkmark"></span></label>
-            <label for="option2" class="options"><input type="checkbox" id="option2">Hyper Text Markup Language<span class="checkmark"></span></label>
-            <label for="option3" class="options"><input type="checkbox" id="option3">Hyper Text Multiple Language<span class="checkmark"></span></label>
-            <label for="option4" class="options"><input type="checkbox" id="option4">Hyper Tool Multi Language<span class="checkmark"></span></label>
-          </div>
-        </div>
+        <div id="qustionsContainer"></div>
       </main>
       <!-- Quiz Footer Next Button -->
       <footer>
         <div class="footer_container">
-            <div class="qustion_Count">
-              <span>1</span>
-              <p>of</p>
-              <span>5</span>
-              <p>Questions</p>
-            </div>
-            <div class="next_Btn">
-              <button>Next Que</button>
-            </div>
+          <div class="qustion_Count">
+            <span>1</span>
+            <p>of</p>
+            <span>5</span>
+            <p>Questions</p>
+          </div>
+          <div class="next_Btn">
+            <button onclick="renderQuestions()">Next Que</button>
+          </div>
         </div>
       </footer>
     </div>
