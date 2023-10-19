@@ -9,16 +9,12 @@ body {
   background-color: #007bff;
 }
 
-.quiz_container,
-.startBtn,
-.emailPass {
-  display: none;
-}
-
 .login_form,
 .emailPass,
+.info_box,
 .startBtn,
-.quiz_container {
+.quiz_container,
+.result_box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -223,6 +219,83 @@ body {
   padding: 10px;
 }
 
+/* <!-- Info Box --> */
+
+.info_box {
+  width: 540px;
+  background: #fff;
+  border-radius: 5px;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.info_box .info-title {
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  border-radius: 5px 5px 0 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.info_box .info-list {
+  padding: 15px 30px;
+}
+
+.info_box .info-list .info {
+  margin: 5px 0;
+  font-size: 17px;
+}
+
+.info_box .info-list .info span {
+  font-weight: 600;
+  color: #007bff;
+}
+.info_box .buttons {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 30px;
+  border-top: 1px solid lightgrey;
+}
+
+.info_box .buttons button {
+  margin: 0 5px;
+  height: 40px;
+  width: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #007bff;
+  transition: all 0.3s ease;
+}
+
+.buttons button.restart {
+  color: #fff;
+  background: #007bff;
+}
+
+.buttons button.restart:hover {
+  background: #0263ca;
+}
+
+.buttons button.quit {
+  color: #007bff;
+  background: #fff;
+}
+
+.buttons button.quit:hover {
+  color: #fff;
+  background: #007bff;
+}
 /* <!-- Start Quiz Button --> */
 
 .startBtn button {
@@ -232,6 +305,7 @@ body {
   font-size: 24px;
   font-weight: 600;
   transition: all 0.3s;
+  color: #007bff;
 }
 
 .startBtn button:hover {
@@ -389,4 +463,69 @@ body {
   border: solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+/* <!-- Result Box --> */
+
+.result_box {
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  padding: 25px 30px;
+  width: 450px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.result_box .icon {
+  font-size: 100px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.result_box .complete_text {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.result_box .score_text span {
+  display: flex;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.result_box .score_text span p {
+  padding: 0 4px;
+  font-weight: 600;
+}
+
+.result_box .buttons {
+  display: flex;
+  margin: 20px 0;
+}
+
+.result_box .buttons button {
+  margin: 0 10px;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #007bff;
+  transition: all 0.3s ease;
+}
+
+/* .login_form, */
+.quiz_container,
+.startBtn,
+.emailPass,
+.info_box,
+.result_box {
+  display: none;
 }

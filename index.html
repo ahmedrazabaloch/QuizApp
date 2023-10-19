@@ -22,7 +22,12 @@
             <span class="material-icons icon">email</span>
           </span>
           <span class="inputf">
-            <input type="password" class="input" id="uPass" placeholder="Password" />
+            <input
+              type="password"
+              class="input"
+              id="uPass"
+              placeholder="Password"
+            />
             <span class="label">Password</span>
             <span class="material-icons icon showPass">lock</span>
           </span>
@@ -54,9 +59,34 @@
         </div>
       </div>
     </div>
+    <!-- Info Box -->
+    <div class="info_box">
+      <div class="info-title"><span>Some Rules of this Quiz</span></div>
+      <div class="info-list">
+        <div class="info">
+          1. You will have only <span>15 seconds</span> per each question.
+        </div>
+        <div class="info">
+          2. Once you select your answer, it can't be undone.
+        </div>
+        <div class="info">
+          3. You can't select any option once time goes off.
+        </div>
+        <div class="info">
+          4. You can't exit from the Quiz while you're playing.
+        </div>
+        <div class="info">
+          5. You'll get points on the basis of your correct answers.
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="quit" onclick="quit()">Exit Quiz</button>
+        <button class="restart" onclick="enterQuiz()">Continue</button>
+      </div>
+    </div>
     <!-- Start Quiz Button -->
     <div class="startBtn">
-      <button>Start Quiz</button>
+      <button onclick="startQuiz()">Start Quiz</button>
     </div>
     <!-- Question Displayed -->
     <div class="quiz_container">
@@ -78,7 +108,7 @@
       <footer>
         <div class="footer_container">
           <div class="qustion_Count">
-            <span>1</span>
+            <span id="qustionNo">1</span>
             <p>of</p>
             <span>5</span>
             <p>Questions</p>
@@ -88,6 +118,20 @@
           </div>
         </div>
       </footer>
+    </div>
+    <!-- Result Box -->
+    <div class="result_box">
+      <div class="icon">
+        <i class="fas fa-crown"></i>
+      </div>
+      <div class="complete_text">You've completed the Quiz!</div>
+      <div class="score_text">
+        <!-- Here I've inserted Score Result from JavaScript -->
+      </div>
+      <div class="buttons">
+        <button class="restart" onclick="restart()">Replay Quiz</button>
+        <button class="quit" onclick="quit()">Quit Quiz</button>
+      </div>
     </div>
 
     <script src="app.js"></script>
