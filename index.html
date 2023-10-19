@@ -3,10 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>QuizApp</title>
   </head>
   <body>
+    <!-- UserForm -->
+    <div class="login_form">
+      <div class="form">
+        <div class="title">Login</div>
+        <span class="inputs">
+          <span class="inputf">
+            <input type="email" class="input" placeholder="Email" />
+            <span class="label">Email</span>
+            <span class="material-icons icon">email</span>
+          </span>
+          <span class="inputf">
+            <input type="password" class="input" placeholder="Password" />
+            <span class="label">Password</span>
+            <span class="material-icons icon">lock</span>
+          </span>
+        </span>
+        <div class="links">
+          <a>Forgot Password</a>
+          <label for="remember">
+            <input type="checkbox" id="remember" />
+            Remember Me
+          </label>
+        </div>
+        <button type="button" class="btn" onclick="loginForm()">Login</button>
+        <div class="text">New user? Create an account <a>Register</a></div>
+        
+        <div class="emailPass">
+          <div>
+            <span>Email:</span>
+            <p>ahmed@gmail.com</p>
+          </div>
+          <div>
+            <span>Password:</span>
+            <p>Smit123</p>
+          </div>
+          <button class="btn" onclick="backToForm()">Remembered</button>
+        </div>
+      </div>
+    </div>
     <!-- Start Quiz Button -->
     <div class="startBtn">
       <button>Start Quiz</button>
@@ -24,7 +67,7 @@
         </div>
       </header>
       <!-- Quiz Quesitons/Answer -->
-      <main>
+      <main id="quizHidden">
         <div id="qustionsContainer"></div>
       </main>
       <!-- Quiz Footer Next Button -->

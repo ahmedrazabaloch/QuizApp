@@ -1,0 +1,168 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #007bff;
+}
+
+.login_form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../images/login-back.png);
+  background-size: cover;
+}
+
+.form {
+  width: 400px;
+  height: 450px;
+  box-sizing: border-box;
+  border-radius: 5mm;
+  padding: 40px 30px;
+  backdrop-filter: blur(5px) saturate(160%);
+  -webkit-backdrop-filter: blur(5px) saturate(160%);
+  background: #fff; 
+  border: 0.5mm solid rgba(0, 0, 0, 0.65);
+  position: relative;
+}
+
+.title {
+  width: 100%;
+  font-family: poppins;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.inputs {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.inputf {
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+  margin: 15px 0;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 0.55mm solid #007bff;
+  background: none;
+  padding: 0 15px;
+  font-family: poppins;
+  font-size: 15px;
+  color: #007bff;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #84c5fe;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #007bff;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: poppins;
+  opacity: 0;
+  z-index: -1;
+  transition: 0.25s ease-out;
+}
+
+.input:focus + .label {
+  top: -20px;
+  opacity: 1;
+  z-index: 1;
+}
+
+.input:focus::placeholder {
+  opacity: 0;
+}
+
+.input:not(:placeholder-shown) + .label {
+  top: -20px;
+  opacity: 1;
+  z-index: 1;
+}
+
+.icon {
+  color: #84c5fe;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 18px;
+}
+
+.links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-family: poppins;
+  margin-bottom: 50px;
+  color: #007bff;
+}
+
+.links label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.links a {
+  font-weight: 600;
+  color: #007bff;
+}
+
+.btn {
+  width: 100%;
+  height: 40px;
+  background: #007bff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.btn span {
+  color: #fff;
+  font-family: poppins;
+  font-size: 16px;
+}
+
+.text {
+  width: 100%;
+  font-family: poppins;
+  font-size: 13px;
+  text-align: center;
+  color: #007bff;
+}
+
+.text a {
+  color: #007bff;
+  font-weight: 600;
+}

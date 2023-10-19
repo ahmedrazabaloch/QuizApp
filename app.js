@@ -45,11 +45,23 @@ var questions = [
   },
 ];
 
+var startBtn = document.querySelector(".startBtn");
+var login_form = document.querySelector(".login_form");
+var emailPass = document.querySelector(".emailPass");
+
+function backToForm() {
+  emailPass.style.display = "none";
+}
+
+// function loginForm() {
+//   startBtn.style.display = "block";
+//   login_form.style.display = "none";
+// }
+
 var countDown = document.getElementById("timer");
 var index = 0;
 var score = 0;
 var counter;
-
 
 function renderQuestions() {
   var question = document.getElementById("qustionsContainer");
@@ -83,9 +95,9 @@ function renderQuestions() {
 }
 
 renderQuestions();
-startTimer(10)
+startTimer(10);
 function startTimer(time) {
-    counter = setInterval(timer, 1000);
+  counter = setInterval(timer, 1000);
   function timer() {
     countDown.textContent = time;
     time--;
