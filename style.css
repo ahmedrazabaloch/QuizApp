@@ -8,6 +8,23 @@
 body {
   background-color: #007bff;
 }
+
+.quiz_container,
+.startBtn,
+.emailPass {
+  display: none;
+}
+
+.login_form,
+.emailPass,
+.startBtn,
+.quiz_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
 /* <!-- Login Form --> */
 .login_form {
   width: 100%;
@@ -33,7 +50,6 @@ body {
 
 .title {
   width: 100%;
-  font-family: poppins;
   font-size: 30px;
   text-align: center;
   margin-bottom: 20px;
@@ -66,7 +82,6 @@ body {
   border-bottom: 0.55mm solid #007bff;
   background: none;
   padding: 0 15px;
-  font-family: poppins;
   font-size: 15px;
   color: #007bff;
   outline: none;
@@ -83,7 +98,6 @@ body {
   color: #007bff;
   font-size: 13px;
   font-weight: 500;
-  font-family: poppins;
   opacity: 0;
   z-index: -1;
   transition: 0.25s ease-out;
@@ -122,7 +136,6 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: 12px;
-  font-family: poppins;
   margin-bottom: 50px;
   color: #007bff;
 }
@@ -164,7 +177,6 @@ body {
 
 .text {
   width: 100%;
-  font-family: poppins;
   font-size: 13px;
   text-align: center;
   color: #007bff;
@@ -175,14 +187,21 @@ body {
   font-weight: 600;
 }
 
+.clickHere {
+  color: #007bff;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px 0;
+  cursor: pointer;
+  user-select: none;
+}
+
 .emailPass {
   width: 350px;
   height: 200px;
   background-color: #fff;
   color: #007bff;
-  border: 1px solid #84c5fe;
   padding: 30px;
-  display: flex;
   flex-direction: column;
   gap: 10px;
   border-radius: 5px;
@@ -195,31 +214,16 @@ body {
   justify-content: space-between;
 }
 
-.emailPass span{
+.emailPass span {
   color: #000;
-
 }
 
-.emailPass .btn{
+.emailPass .btn {
   font-weight: 400;
   padding: 10px;
 }
 
 /* <!-- Start Quiz Button --> */
-
-.quiz_container,
-.startBtn {
-  display: none;
-}
-.login_form,
-.emailPass,
-.startBtn,
-.quiz_container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-}
 
 .startBtn button {
   padding: 10px;

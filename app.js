@@ -47,16 +47,32 @@ var questions = [
 
 var startBtn = document.querySelector(".startBtn");
 var login_form = document.querySelector(".login_form");
-var emailPass = document.querySelector(".emailPass");
+var emailPass = login_form.querySelector(".emailPass");
+var hideBtn = login_form.querySelector(".hideBtn");
+var passIcon = login_form.querySelector(".showPass");
+var userEmail = document.getElementById("uEmail");
+var userPass = document.getElementById("uPass");
 
+var email = "ahmed@gmail.com";
+var pass = "12345";
+
+function showPopup() {
+  emailPass.style.display = "flex";
+  hideBtn.style.display = "none";
+}
 function backToForm() {
   emailPass.style.display = "none";
+  hideBtn.style.display = "block";
 }
-
-// function loginForm() {
-//   startBtn.style.display = "block";
-//   login_form.style.display = "none";
-// }
+function loginForm() {
+  if (userEmail.value === email && userPass.value === pass) {
+    startBtn.style.display = "block";
+    login_form.style.display = "none";
+  } else {
+    passIcon.style.color = "#007bff";
+    alert("wrong password");
+  }
+}
 
 var countDown = document.getElementById("timer");
 var index = 0;

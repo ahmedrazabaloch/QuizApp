@@ -17,14 +17,14 @@
         <div class="title">Login</div>
         <span class="inputs">
           <span class="inputf">
-            <input type="email" class="input" placeholder="Email" />
+            <input type="email" class="input" id="uEmail" placeholder="Email" />
             <span class="label">Email</span>
             <span class="material-icons icon">email</span>
           </span>
           <span class="inputf">
-            <input type="password" class="input" placeholder="Password" />
+            <input type="password" class="input" id="uPass" placeholder="Password" />
             <span class="label">Password</span>
-            <span class="material-icons icon">lock</span>
+            <span class="material-icons icon showPass">lock</span>
           </span>
         </span>
         <div class="links">
@@ -34,9 +34,13 @@
             Remember Me
           </label>
         </div>
-        <button type="button" class="btn" onclick="loginForm()">Login</button>
-        <div class="text">New user? Create an account <a>Register</a></div>
-        
+        <div class="hideBtn">
+          <button type="button" class="btn" onclick="loginForm()">Login</button>
+          <div class="text">New user? Create an account <a>Register</a></div>
+          <p onclick="showPopup()" class="clickHere">
+            Click Here for <span>Email:Pass</span>
+          </p>
+        </div>
         <div class="emailPass">
           <div>
             <span>Email:</span>
@@ -44,7 +48,7 @@
           </div>
           <div>
             <span>Password:</span>
-            <p>Smit123</p>
+            <p>12345</p>
           </div>
           <button class="btn" onclick="backToForm()">Remembered</button>
         </div>
