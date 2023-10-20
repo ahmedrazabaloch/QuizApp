@@ -48,6 +48,7 @@ var questions = [
 var startBtn = document.querySelector(".startBtn");
 var login_form = document.querySelector(".login_form");
 var emailPass = login_form.querySelector(".emailPass");
+var animate = login_form.querySelector("#animate");
 var hideBtn = login_form.querySelector(".hideBtn");
 var passIcon = login_form.querySelector(".showPass");
 var userEmail = document.getElementById("uEmail");
@@ -103,15 +104,19 @@ function loginForm() {
       showCancelButton: false,
       confirmButtonColor: "#3085d6",
     });
+    setTimeout(function () {
+      animate.classList.add("animate__flash");
+      animate.style.color = "red";
+    }, 2000);
   }
 }
 function showPass() {
   if (userPass.type === "password") {
     userPass.type = "text";
-    passIcon.style.cursor = "pointer";
+    passIcon.innerHTML = "lock_open";
   } else {
     userPass.type = "password";
-    passIcon.style.cursor = "pointer";
+    passIcon.innerHTML = "lock";
   }
 }
 

@@ -7,6 +7,10 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>QuizApp</title>
@@ -30,7 +34,9 @@
               placeholder="Password"
             />
             <span class="label">Password</span>
-            <span class="material-icons icon showPass" onclick="showPass()">lock</span>
+            <span class="material-icons icon showPass" onclick="showPass()"
+              >lock</span
+            >
           </span>
         </span>
         <div class="links">
@@ -43,7 +49,7 @@
         <div class="hideBtn">
           <button type="button" class="btn" onclick="loginForm()">Login</button>
           <div class="text">New user? Create an account <a>Register</a></div>
-          <p onclick="showPopup()" class="clickHere">
+          <p onclick="showPopup()" id="animate" class="clickHere animate__animated">
             Click Here for <span>Email:Pass</span>
           </p>
         </div>
