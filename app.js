@@ -76,11 +76,45 @@ function loginForm() {
   if (userEmail.value === email && userPass.value === pass) {
     infoBox.style.display = "block";
     login_form.style.display = "none";
+    // sweetAlert
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 1000,
+      timerProgressBar: false,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+      },
+    });
+    Toast.fire({
+      icon: "success",
+      title: "Signed in successfully",
+    });
   } else {
     passIcon.style.color = "#007bff";
-    alert("wrong password");
+    passIcon.style.cursor = "pointer";
+    // sweetAlert
+    Swal.fire({
+      title: "Wrong input",
+      text: "Please enter a valid Email & Password",
+      icon: "warning",
+      showCancelButton: false,
+      confirmButtonColor: "#3085d6",
+    });
   }
 }
+function showPass() {
+  if (userPass.type === "password") {
+    userPass.type = "text";
+    passIcon.style.cursor = "pointer";
+  } else {
+    userPass.type = "password";
+    passIcon.style.cursor = "pointer";
+  }
+}
+
 function quit() {
   location.reload();
 }

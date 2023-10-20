@@ -8,6 +8,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>QuizApp</title>
   </head>
   <body>
@@ -29,7 +30,7 @@
               placeholder="Password"
             />
             <span class="label">Password</span>
-            <span class="material-icons icon showPass">lock</span>
+            <span class="material-icons icon showPass" onclick="showPass()">lock</span>
           </span>
         </span>
         <div class="links">
@@ -79,7 +80,7 @@
           prohibited.
         </div>
         <div class="info">
-          <span>5.</span> If three prohibitions are counted, you will be
+          <span>5.</span> If two prohibitions are counted, you will be
           eliminated.
         </div>
         <div class="info">
