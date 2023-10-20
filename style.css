@@ -182,6 +182,9 @@ body {
   color: #007bff;
   font-weight: 600;
 }
+.showPass {
+  cursor: pointer;
+}
 
 .clickHere {
   color: #007bff;
@@ -258,7 +261,6 @@ body {
 .info {
   border-bottom: 1px solid #84c5fe;
   padding: 5px 0;
-  
 }
 .info_box .buttons {
   height: 60px;

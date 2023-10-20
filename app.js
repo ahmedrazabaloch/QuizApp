@@ -72,6 +72,8 @@ function showPopup() {
 function backToForm() {
   emailPass.style.display = "none";
   hideBtn.style.display = "block";
+  animate.style.color = "#007bff";
+  animate.classList.remove("animate__flash");
 }
 function loginForm() {
   if (userEmail.value === email && userPass.value === pass) {
@@ -80,9 +82,9 @@ function loginForm() {
     // sweetAlert
     const Toast = Swal.mixin({
       toast: true,
-      position: "top-end",
+      position: "top",
       showConfirmButton: false,
-      timer: 1000,
+      timer: 1500,
       timerProgressBar: false,
       didOpen: (toast) => {
         toast.addEventListener("mouseenter", Swal.stopTimer);
