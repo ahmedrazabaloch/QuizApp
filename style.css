@@ -255,6 +255,10 @@ body {
   font-weight: 600;
   color: #007bff;
 }
+.info {
+  border-bottom: 1px solid #84c5fe;
+  padding: 5px 0;
+}
 .info_box .buttons {
   height: 60px;
   display: flex;
