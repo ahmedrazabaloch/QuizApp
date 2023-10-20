@@ -92,6 +92,7 @@ function startQuiz() {
   quizStart.style.display = "block";
   startBtn.style.display = "none";
   renderQuestions();
+  document.documentElement.requestFullscreen();
 }
 
 function restart() {
