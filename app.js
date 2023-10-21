@@ -59,6 +59,8 @@ var resultbox = document.querySelector(".result_box");
 var scoreText = document.querySelector(".score_text");
 var inputs = login_form.querySelector(".inputs");
 var links = login_form.querySelector(".links");
+var progressbar = document.getElementById("progressBar");
+console.log("check", progressbar);
 
 var email = "ahmed@gmail.com";
 var pass = "12345";
@@ -160,7 +162,6 @@ function renderQuestions() {
     if (options[i].checked) {
       if (options[i].value === questions[index - 1].answer) {
         score++;
-        console.log(score);
       }
     }
   }
@@ -174,6 +175,7 @@ function renderQuestions() {
       You are not a child👶🏻, Don't cheat on exams💻. Shame on you!🖐️<span>
        `;
     } else {
+      progressbar.innerHTML = `<p>${score}</p>`;
       scoreText.innerHTML = `
       <span>Score: <p>${score}</p>out of<p>${options.length + 1}</p><span>
        `;

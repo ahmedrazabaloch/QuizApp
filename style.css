@@ -499,6 +499,12 @@ body {
   font-weight: 500;
 }
 
+.score_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
 .result_box .score_text span {
   display: flex;
   margin: 10px 0;
@@ -528,6 +534,18 @@ body {
   border-radius: 5px;
   border: 1px solid #007bff;
   transition: all 0.3s ease;
+}
+.progressBar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(#007bff 75%, #84c5fe 0);
+    text-align: center;
+    padding: 10% 0;
+    font-size: larger;
+    font-weight: 600;
+    margin-top: 25px;
 }
 
 /* .login_form, */
