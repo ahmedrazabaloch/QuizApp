@@ -134,6 +134,7 @@ body {
   font-size: 12px;
   margin-bottom: 50px;
   color: #007bff;
+  user-select: none;
 }
 
 .links label {
@@ -176,6 +177,7 @@ body {
   font-size: 13px;
   text-align: center;
   color: #007bff;
+  cursor: no-drop;
 }
 
 .text a {
@@ -256,7 +258,7 @@ body {
 
 .info_box .info-list .info span {
   font-weight: 600;
-  color: #007bff;
+  color: red;
 }
 .info {
   border-bottom: 1px solid #84c5fe;

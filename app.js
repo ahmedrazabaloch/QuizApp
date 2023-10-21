@@ -1,47 +1,47 @@
 var questions = [
   {
-    question: "What HTML tag is used to create an ordered (numbered) list?",
-    option1: "ul",
-    option2: "li",
-    option3: "ol",
-    option4: "dl",
-    answer: "ol",
+    question: "What is a JavaScript constructor function used for?",
+    option1: "Defining CSS styles for elements.",
+    option2: "Creating and initializing objects.",
+    option3: "Managing database connections.",
+    option4: "Controlling user interface animations.",
+    answer: "Creating and initializing objects.",
   },
   {
     question:
-      "In CSS, what property is used to change the text color of an element?",
-    option1: "background-color",
-    option2: "font-style",
-    option3: "color",
-    option4: "text-align",
-    answer: "color",
-  },
-  {
-    question: "How do you declare a variable in JavaScript?",
-    option1: "variable x;",
-    option2: "let x;",
-    option3: "var x;",
-    option4: "Both b and c",
-    answer: "Both b and c",
+      "Which keyword is used to create a new instance of an object in JavaScript?",
+    option1: "this",
+    option2: "new",
+    option3: "create",
+    option4: "instance",
+    answer: "new",
   },
   {
     question:
-      "Which HTML element is used to embed external content, such as a video or audio file, on a web page?",
-    option1: "iframe",
-    option2: "embed",
-    option3: "object",
-    option4: "video",
-    answer: "video",
+      "What does the 'this' keyword refer to in a constructor function?",
+    option1: "The global object (e.g., 'window' in a browser).",
+    option2: "The prototype object of the constructor.",
+    option3: "The current instance of the object being created.",
+    option4: "A reserved keyword with no specific meaning.",
+    answer: "The current instance of the object being created.",
   },
   {
-    question: "What is the box model in CSS?",
-    option1: "A model for designing 3D shapes in CSS.",
-    option2: "A way to organize content using boxes in HTML.",
-    option3:
-      "A model that describes how elements are rendered as boxes with content, padding, borders, and margins.",
-    option4: "A model for creating rounded corners in CSS.",
-    answer:
-      "A model that describes how elements are rendered as boxes with content, padding, borders, and margins.",
+    question:
+      "What is the purpose of the 'prototype' property in a constructor function?",
+    option1: "To define the constructor's name.",
+    option2: "To store private data for the object.",
+    option3: "To add methods and properties to all instances of the object.",
+    option4: "To prevent the object from being modified.",
+    answer: "To add methods and properties to all instances of the object.",
+  },
+  {
+    question:
+      "How do you access a property of an object created with a constructor function?",
+    option1: "Using the 'dot' notation (e.g., obj.property).",
+    option2: "By calling a separate function with the property name.",
+    option3: "With the 'for...in' loop to iterate through properties.",
+    option4: "By using the 'prototype' property of the constructor.",
+    answer: "Using the 'dot' notation (e.g., obj.property).",
   },
 ];
 
@@ -57,6 +57,9 @@ var infoBox = document.querySelector(".info_box");
 var quizStart = document.querySelector(".quiz_container");
 var resultbox = document.querySelector(".result_box");
 var scoreText = document.querySelector(".score_text");
+var inputs = login_form.querySelector(".inputs");
+var links = login_form.querySelector(".links");
+
 var email = "ahmed@gmail.com";
 var pass = "12345";
 var countDown = document.getElementById("timer");
@@ -68,8 +71,12 @@ var timeValue = 5;
 function showPopup() {
   emailPass.style.display = "flex";
   hideBtn.style.display = "none";
+  inputs.style.display = "none";
+  links.style.display = "none";
 }
 function backToForm() {
+  inputs.style.display = "flex";
+  links.style.display = "flex";
   emailPass.style.display = "none";
   hideBtn.style.display = "block";
   animate.style.color = "#007bff";
