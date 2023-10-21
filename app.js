@@ -170,7 +170,8 @@ function renderQuestions() {
     quizStart.style.display = "none";
     if (score === 0) {
       scoreText.innerHTML = `
-      <span>You are not a child, Don't cheat on exams. Shame on you!<span>
+      <span style="text-align: center; margin: 5px 0; font-size: 22px;">
+      You are not a child👶🏻, Don't cheat on exams💻. Shame on you!🖐️<span>
        `;
     } else {
       scoreText.innerHTML = `
