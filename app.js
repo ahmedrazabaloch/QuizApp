@@ -164,6 +164,20 @@ function renderQuestions() {
       }
     }
   }
+  window.addEventListener("blur", () => {
+    clearInterval(counter);
+    resultbox.style.display = "flex";
+    quizStart.style.display = "none";
+    if (score === 0) {
+      scoreText.innerHTML = `
+      <span>You are not a child, Don't cheat on exams. Shame on you!<span>
+       `;
+    } else {
+      scoreText.innerHTML = `
+      <span>Score: <p>${score}</p>out of<p>${options.length + 1}</p><span>
+       `;
+    }
+  });
   if (!questions[index]) {
     clearInterval(counter);
     resultbox.style.display = "flex";
