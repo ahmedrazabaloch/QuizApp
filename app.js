@@ -60,8 +60,6 @@ var scoreText = document.querySelector(".score_text");
 var inputs = login_form.querySelector(".inputs");
 var links = login_form.querySelector(".links");
 var progressbar = document.getElementById("progressBar");
-console.log("check", progressbar);
-
 var email = "ahmed@gmail.com";
 var pass = "12345";
 var countDown = document.getElementById("timer");
@@ -88,7 +86,6 @@ function loginForm() {
   if (userEmail.value === email && userPass.value === pass) {
     infoBox.style.display = "block";
     login_form.style.display = "none";
-    // sweetAlert
     const Toast = Swal.mixin({
       toast: true,
       position: "top",
@@ -107,7 +104,6 @@ function loginForm() {
   } else {
     passIcon.style.color = "#007bff";
     passIcon.style.cursor = "pointer";
-    // sweetAlert
     Swal.fire({
       title: "Wrong input",
       text: "Please enter a valid Email & Password",
@@ -165,6 +161,7 @@ function renderQuestions() {
       }
     }
   }
+  var percetage = (score / 5) * 100;
   window.addEventListener("blur", () => {
     clearInterval(counter);
     resultbox.style.display = "flex";
@@ -175,7 +172,12 @@ function renderQuestions() {
       You are not a child👶🏻, Don't cheat on exams💻. Shame on you!🖐️<span>
        `;
     } else {
-      progressbar.innerHTML = `<p>${score}</p>`;
+      var progressbar = document.querySelector(".progressBar");
+      if (progressbar) {
+        progressbar.innerHTML = `
+        <p>${percetage}%</p>
+        `;
+      }
       scoreText.innerHTML = `
       <span>Score: <p>${score}</p>out of<p>${options.length + 1}</p><span>
        `;
@@ -185,6 +187,10 @@ function renderQuestions() {
     clearInterval(counter);
     resultbox.style.display = "flex";
     quizStart.style.display = "none";
+    var progressbar = document.querySelector(".progressBar");
+    progressbar.innerHTML = `
+      <p>${percetage}%</p>
+      `;
     scoreText.innerHTML = `
    <span>Score: <p>${score}</p>out of<p>${options.length + 1}</p><span>
     `;

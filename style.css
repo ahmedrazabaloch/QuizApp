@@ -538,14 +538,18 @@ body {
 .progressBar {
   width: 100px;
   height: 100px;
+  margin-top: 20px;
+  padding: 35px 0;
+  text-align: center;
   border-radius: 50%;
   background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
     conic-gradient(#007bff 75%, #84c5fe 0);
-    text-align: center;
-    padding: 10% 0;
-    font-size: larger;
-    font-weight: 600;
-    margin-top: 25px;
+}
+.progressBar p {
+  font-size: larger;
+  font-weight: 700;
+  text-align: center;
+  color: #007bff;
 }
 
 /* .login_form, */
