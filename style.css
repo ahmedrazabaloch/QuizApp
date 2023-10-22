@@ -186,6 +186,7 @@ body {
 }
 .showPass {
   cursor: pointer;
+  user-select: none;
 }
 
 .clickHere {
