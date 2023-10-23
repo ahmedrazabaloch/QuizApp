@@ -66,7 +66,7 @@ var countDown = document.getElementById("timer");
 var index = 0;
 var score = 0;
 var counter;
-var timeValue = 5;
+var timeValue = 15;
 
 function showPopup() {
   emailPass.style.display = "flex";
