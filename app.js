@@ -60,6 +60,11 @@ var scoreText = document.querySelector(".score_text");
 var inputs = document.querySelector(".inputs");
 var links = document.querySelector(".links");
 var progressbar = document.getElementById("progressBar");
+var signUp = document.getElementById("signUp");
+var form = document.getElementById("form");
+var singUpName = document.getElementById("sName");
+var singUpEmail = document.getElementById("sEmail");
+var singUpPass = document.getElementById("sPass");
 var email = "ahmed@gmail.com";
 var pass = "12345";
 var countDown = document.getElementById("timer");
@@ -68,17 +73,23 @@ var score = 0;
 var counter;
 var timeValue = 15;
 
-var form = document.getElementById("form");
-var singUpName = document.getElementById("sName");
-var singUpEmail = document.getElementById("sEmail");
-var singUpPass = document.getElementById("sPass");
+signUp.addEventListener("click", () => {
+  form.style.display = "block";
+  login_form.style.display = "none";
+});
 
-// function submitForm() {
-//   localStorage.setItem("userName", singUpName.value);
-//   localStorage.setItem("userEmail", singUpEmail.value);
-//   localStorage.setItem("userPass", singUpPass.value);
-//   window.location.replace = "index.html";
-// }
+function submitForm() {
+  localStorage.setItem("userName", singUpName.value);
+  localStorage.setItem("userEmail", singUpEmail.value);
+  localStorage.setItem("userPass", singUpPass.value);
+  form.style.display = "none";
+  login_form.style.display = "block";
+}
+
+var regEmail = localStorage.getItem("userEmail");
+var regPass = localStorage.getItem("userPass");
+
+console.log(singUpEmail, singUpPass);
 
 function showPopup() {
   emailPass.style.display = "flex";
@@ -95,40 +106,54 @@ function backToForm() {
   animate.classList.remove("animate__flash");
 }
 function loginForm() {
-  if (userEmail.value === email && userPass.value === pass) {
-    infoBox.style.display = "block";
-    login_form.style.display = "none";
+  var user = localStorage.getItem("user");
+  if (!user) {
     const Toast = Swal.mixin({
       toast: true,
       position: "top",
-      showConfirmButton: false,
-      timer: 1500,
-      timerProgressBar: false,
-      didOpen: (toast) => {
-        toast.addEventListener("mouseenter", Swal.stopTimer);
-        toast.addEventListener("mouseleave", Swal.resumeTimer);
-      },
+      showConfirmButton: true,
     });
     Toast.fire({
-      icon: "success",
-      title: "Signed in successfully",
+      title: "<h2>Welcome!</h2> Please Register Your Account",
     });
   } else {
-    passIcon.style.color = "#007bff";
-    passIcon.style.cursor = "pointer";
-    Swal.fire({
-      title: "Wrong input",
-      text: "Please enter a valid Email & Password",
-      icon: "warning",
-      showCancelButton: false,
-      confirmButtonColor: "#3085d6",
-    });
-    setTimeout(function () {
-      animate.classList.add("animate__flash");
-      animate.style.color = "red";
-    }, 2000);
+    if (userEmail.value === regEmail && userPass.value === regPass) {
+      infoBox.style.display = "block";
+      login_form.style.display = "none";
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: false,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Signed in successfully",
+      });
+    } else {
+      passIcon.style.color = "#007bff";
+      passIcon.style.cursor = "pointer";
+      Swal.fire({
+        title: "Wrong input",
+        text: "Please enter a valid Email & Password",
+        icon: "warning",
+        showCancelButton: false,
+        confirmButtonColor: "#3085d6",
+      });
+      setTimeout(function () {
+        animate.classList.add("animate__flash");
+        animate.style.color = "red";
+      }, 2000);
+    }
   }
+  localStorage.setItem("user", true);
 }
+
 function showPass() {
   if (userPass.type === "password") {
     userPass.type = "text";

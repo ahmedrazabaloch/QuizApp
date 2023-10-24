@@ -7,6 +7,7 @@
 }
 body {
   background-color: #007bff;
+  scroll-behavior: smooth;
 }
 
 .login_form,
@@ -23,7 +24,7 @@ body {
 }
 
 /* <!-- Sign Up Form --> */
-#form button{
+#form button {
   margin-top: 20px;
 }
 
@@ -32,9 +33,12 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-
-
 /* <!-- Login Form --> */
+.swal2-styled {
+  width: 100% !important;
+  background-color: #007bff !important;
+}
+
 .login_form {
   width: 100%;
   height: 100%;
@@ -42,6 +46,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
   justify-content: center;
   background-size: cover;
+  transition: all 0.3s;
 }
 
 .form {
@@ -190,12 +195,13 @@ input::-webkit-inner-spin-button {
   font-size: 13px;
   text-align: center;
   color: #007bff;
-  cursor: no-drop;
+  user-select: none;
 }
 
 .text a {
   color: #007bff;
   font-weight: 600;
+  cursor: pointer;
 }
 .showPass {
   cursor: pointer;
@@ -571,6 +577,7 @@ input::-webkit-inner-spin-button {
 .startBtn,
 .emailPass,
 .info_box,
-.result_box {
+.result_box,
+#form {
   display: none;
 }
