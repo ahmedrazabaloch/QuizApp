@@ -16,6 +16,59 @@
     <title>QuizApp</title>
   </head>
   <body>
+    <!-- Registeration Form -->
+    <form class="form" id="form" onsubmit="submitForm()">
+      <div class="title">Sign Up</div>
+      <span class="inputs">
+        <span class="inputf">
+          <input
+            type="text"
+            class="input"
+            id="sName"
+            placeholder="Full Name"
+            required
+          />
+          <span class="label">Full Name</span>
+          <span class="material-icons icon">person</span>
+        </span>
+        <span class="inputf">
+          <input
+            type="number"
+            class="input"
+            id="sRoll"
+            placeholder="Roll No"
+            required
+          />
+          <span class="label">Roll No</span>
+          <span class="material-icons icon">pin</span>
+        </span>
+        <span class="inputf">
+          <input
+            type="email"
+            class="input"
+            id="sEmail"
+            placeholder="Email"
+            required
+          />
+          <span class="label">Email</span>
+          <span class="material-icons icon">email</span>
+        </span>
+        <span class="inputf">
+          <input
+            type="password"
+            class="input"
+            id="sPass"
+            placeholder="Password"
+            required
+          />
+          <span class="label">Password</span>
+          <span class="material-icons icon showPass" title="Show Password"
+            >lock</span
+          >
+        </span>
+      </span>
+      <button type="submit" class="btn">Register</button>
+    </form>
     <!-- UserForm -->
     <div class="login_form">
       <div class="form">

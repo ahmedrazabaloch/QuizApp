@@ -47,18 +47,18 @@ var questions = [
 
 var startBtn = document.querySelector(".startBtn");
 var login_form = document.querySelector(".login_form");
-var emailPass = login_form.querySelector(".emailPass");
-var animate = login_form.querySelector("#animate");
-var hideBtn = login_form.querySelector(".hideBtn");
-var passIcon = login_form.querySelector(".showPass");
+var emailPass = document.querySelector(".emailPass");
+var animate = document.querySelector("#animate");
+var hideBtn = document.querySelector(".hideBtn");
+var passIcon = document.querySelector(".showPass");
 var userEmail = document.getElementById("uEmail");
 var userPass = document.getElementById("uPass");
 var infoBox = document.querySelector(".info_box");
 var quizStart = document.querySelector(".quiz_container");
 var resultbox = document.querySelector(".result_box");
 var scoreText = document.querySelector(".score_text");
-var inputs = login_form.querySelector(".inputs");
-var links = login_form.querySelector(".links");
+var inputs = document.querySelector(".inputs");
+var links = document.querySelector(".links");
 var progressbar = document.getElementById("progressBar");
 var email = "ahmed@gmail.com";
 var pass = "12345";
@@ -67,6 +67,18 @@ var index = 0;
 var score = 0;
 var counter;
 var timeValue = 15;
+
+var form = document.getElementById("form");
+var singUpName = document.getElementById("sName");
+var singUpEmail = document.getElementById("sEmail");
+var singUpPass = document.getElementById("sPass");
+
+// function submitForm() {
+//   localStorage.setItem("userName", singUpName.value);
+//   localStorage.setItem("userEmail", singUpEmail.value);
+//   localStorage.setItem("userPass", singUpPass.value);
+//   window.location.replace = "index.html";
+// }
 
 function showPopup() {
   emailPass.style.display = "flex";

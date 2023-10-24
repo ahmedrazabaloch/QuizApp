@@ -14,12 +14,25 @@ body {
 .info_box,
 .startBtn,
 .quiz_container,
-.result_box {
+.result_box,
+#form {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 }
+
+/* <!-- Sign Up Form --> */
+#form button{
+  margin-top: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+
 
 /* <!-- Login Form --> */
 .login_form {
@@ -33,7 +46,7 @@ body {
 
 .form {
   width: 400px;
-  height: 450px;
+  height: auto;
   box-sizing: border-box;
   border-radius: 5mm;
   padding: 40px 30px;
