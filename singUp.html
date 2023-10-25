@@ -16,7 +16,59 @@
     <title>Sign-Up</title>
   </head>
   <body>
-    
+    <!-- Registration  Form -->
+    <form class="form" id="form" onsubmit="submitForm()">
+      <div class="title">Sign Up</div>
+      <span class="inputs">
+        <span class="inputf">
+          <input
+            type="text"
+            class="input"
+            id="sName"
+            placeholder="Please enter your full name"
+            required
+          />
+          <span class="label">Full Name</span>
+          <span class="material-icons icon">person</span>
+        </span>
+        <span class="inputf">
+          <input
+            type="number"
+            class="input"
+            id="sRoll"
+            placeholder="Roll No : 126864"
+            required
+          />
+          <span class="label">Roll No</span>
+          <span class="material-icons icon">pin</span>
+        </span>
+        <span class="inputf">
+          <input
+            type="email"
+            class="input"
+            id="sEmail"
+            placeholder="Please enter your valid account"
+            required
+          />
+          <span class="label">Email</span>
+          <span class="material-icons icon">email</span>
+        </span>
+        <span class="inputf">
+          <input
+            type="password"
+            class="input"
+            id="sPass"
+            placeholder="Use Strong Password"
+            required
+          />
+          <span class="label">Password</span>
+          <span class="material-icons icon showPass" title="Show Password"
+            >lock</span
+          >
+        </span>
+      </span>
+      <button type="submit" class="btn">Register</button>
+    </form>
 
     <script src="app.js"></script>
   </body>

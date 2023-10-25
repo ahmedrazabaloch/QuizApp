@@ -16,60 +16,6 @@
     <title>QuizApp</title>
   </head>
   <body>
-    <!-- Registration  Form -->
-
-    <form class="form" id="form" onsubmit="submitForm()">
-      <div class="title">Sign Up</div>
-      <span class="inputs">
-        <span class="inputf">
-          <input
-            type="text"
-            class="input"
-            id="sName"
-            placeholder="Please enter your full name"
-            required
-          />
-          <span class="label">Full Name</span>
-          <span class="material-icons icon">person</span>
-        </span>
-        <span class="inputf">
-          <input
-            type="number"
-            class="input"
-            id="sRoll"
-            placeholder="Roll No : 126864"
-            required
-          />
-          <span class="label">Roll No</span>
-          <span class="material-icons icon">pin</span>
-        </span>
-        <span class="inputf">
-          <input
-            type="email"
-            class="input"
-            id="sEmail"
-            placeholder="Please enter your valid account"
-            required
-          />
-          <span class="label">Email</span>
-          <span class="material-icons icon">email</span>
-        </span>
-        <span class="inputf">
-          <input
-            type="password"
-            class="input"
-            id="sPass"
-            placeholder="Use Strong Password"
-            required
-          />
-          <span class="label">Password</span>
-          <span class="material-icons icon showPass" title="Show Password"
-            >lock</span
-          >
-        </span>
-      </span>
-      <button type="submit" class="btn">Register</button>
-    </form>
     <!-- UserForm -->
     <div class="login_form">
       <div class="form">
@@ -106,7 +52,7 @@
         <div class="hideBtn">
           <button type="button" class="btn" onclick="loginForm()">Login</button>
           <div class="text">
-            New user? Create an account <a id="signUp">Register</a>
+            New user? Create an account <a id="signUp" onclick="singUp()">Register</a>
           </div>
           <p
             onclick="showPopup()"
@@ -119,11 +65,11 @@
         <div class="emailPass">
           <div>
             <span>Email:</span>
-            <p>ahmed@gmail.com</p>
+            <p id="reEmail">ahmed@gmail.com</p>
           </div>
           <div>
             <span>Password:</span>
-            <p>12345</p>
+            <p id="rePass">12345</p>
           </div>
           <button class="btn" onclick="backToForm()">Remembered</button>
         </div>

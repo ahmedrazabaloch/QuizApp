@@ -60,11 +60,8 @@ var scoreText = document.querySelector(".score_text");
 var inputs = document.querySelector(".inputs");
 var links = document.querySelector(".links");
 var progressbar = document.getElementById("progressBar");
-var signUp = document.getElementById("signUp");
 var form = document.getElementById("form");
-var singUpName = document.getElementById("sName");
-var singUpEmail = document.getElementById("sEmail");
-var singUpPass = document.getElementById("sPass");
+
 var email = "ahmed@gmail.com";
 var pass = "12345";
 var countDown = document.getElementById("timer");
@@ -73,29 +70,37 @@ var score = 0;
 var counter;
 var timeValue = 15;
 
-signUp.addEventListener("click", () => {
-  form.style.display = "block";
-  login_form.style.display = "none";
-});
-
-function submitForm() {
-  localStorage.setItem("userName", singUpName.value);
-  localStorage.setItem("userEmail", singUpEmail.value);
-  localStorage.setItem("userPass", singUpPass.value);
-  form.style.display = "none";
-  login_form.style.display = "block";
+var signUp = document.getElementById("signUp");
+function singUp() {
+  window.location.href = "singUp.html";
 }
 
-var regEmail = localStorage.getItem("userEmail");
-var regPass = localStorage.getItem("userPass");
+var singUpName = document.getElementById("sName");
+var singUpEmail = document.getElementById("sEmail");
+var singUpPass = document.getElementById("sPass");
+function submitForm() {
+  event.preventDefault();
+  var registerUser = {
+    name: singUpName.value,
+    email: singUpEmail.value,
+    password: singUpPass.value,
+  };
 
-console.log(singUpEmail, singUpPass);
+  localStorage.setItem("registerUser", JSON.stringify(registerUser));
+}
+var getUserData = localStorage.getItem("registerUser");
+getUserData = JSON.parse(getUserData);
+
+var remenberPass = document.getElementById("rePass");
+var remenberEmail = document.getElementById("reEmail");
 
 function showPopup() {
   emailPass.style.display = "flex";
   hideBtn.style.display = "none";
   inputs.style.display = "none";
   links.style.display = "none";
+  remenberEmail.textContent = getUserData.email;
+  remenberPass.textContent = getUserData.password;
 }
 function backToForm() {
   inputs.style.display = "flex";
@@ -105,7 +110,12 @@ function backToForm() {
   animate.style.color = "#007bff";
   animate.classList.remove("animate__flash");
 }
+
+var getEmail = getUserData.email;
+var getPass = getUserData.password;
+
 function loginForm() {
+  console.log(userEmail.value, userPass.value);
   var user = localStorage.getItem("user");
   if (!user) {
     const Toast = Swal.mixin({
@@ -117,7 +127,7 @@ function loginForm() {
       title: "<h2>Welcome!</h2> Please Register Your Account",
     });
   } else {
-    if (userEmail.value === regEmail && userPass.value === regPass) {
+    if (userEmail.value == getEmail && userPass.value == getPass) {
       infoBox.style.display = "block";
       login_form.style.display = "none";
       const Toast = Swal.mixin({
