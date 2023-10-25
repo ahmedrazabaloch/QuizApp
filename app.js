@@ -62,7 +62,7 @@ var inputs = document.querySelector(".inputs");
 var links = document.querySelector(".links");
 var progressbar = document.getElementById("progressBar");
 var form = document.getElementById("form");
-var countDown = document.getElementById("timer"); 
+var countDown = document.getElementById("timer");
 var index = 0; // Question Counting
 var score = 0; // User Correct Question Score
 var counter; // counter of timer
@@ -94,6 +94,9 @@ var getUserData = localStorage.getItem("registerUser");
 getUserData = JSON.parse(getUserData);
 
 // >>>> Show localStorage Data <<<<
+userEmail.addEventListener("click", () => {
+  animate.style.display = "block";
+});
 var remenberPass = document.getElementById("rePass");
 var remenberEmail = document.getElementById("reEmail");
 function showPopup() {

@@ -577,6 +577,7 @@ input::-webkit-inner-spin-button {
 .startBtn,
 .emailPass,
 .info_box,
-.result_box {
+.result_box,
+#animate {
   display: none;
 }
