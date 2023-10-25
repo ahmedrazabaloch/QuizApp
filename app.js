@@ -1,3 +1,4 @@
+// >>>> Questions <<<<
 var questions = [
   {
     question: "What is a JavaScript constructor function used for?",
@@ -61,20 +62,19 @@ var inputs = document.querySelector(".inputs");
 var links = document.querySelector(".links");
 var progressbar = document.getElementById("progressBar");
 var form = document.getElementById("form");
+var countDown = document.getElementById("timer"); 
+var index = 0; // Question Counting
+var score = 0; // User Correct Question Score
+var counter; // counter of timer
+var timeValue = 15; // timer value
 
-var email = "ahmed@gmail.com";
-var pass = "12345";
-var countDown = document.getElementById("timer");
-var index = 0;
-var score = 0;
-var counter;
-var timeValue = 15;
-
+//  >>>> Redirection Login from to Registration form <<<<
 var signUp = document.getElementById("signUp");
 function singUp() {
   window.location.href = "singUp.html";
 }
 
+//  >>>> Registration form <<<<
 var singUpName = document.getElementById("sName");
 var singUpEmail = document.getElementById("sEmail");
 var singUpPass = document.getElementById("sPass");
@@ -85,15 +85,17 @@ function submitForm() {
     email: singUpEmail.value,
     password: singUpPass.value,
   };
-
   localStorage.setItem("registerUser", JSON.stringify(registerUser));
+  window.location.href = "./index.html";
 }
+
+// >>>> Get data from LocalStorage <<<<
 var getUserData = localStorage.getItem("registerUser");
 getUserData = JSON.parse(getUserData);
 
+// >>>> Show localStorage Data <<<<
 var remenberPass = document.getElementById("rePass");
 var remenberEmail = document.getElementById("reEmail");
-
 function showPopup() {
   emailPass.style.display = "flex";
   hideBtn.style.display = "none";
@@ -111,9 +113,9 @@ function backToForm() {
   animate.classList.remove("animate__flash");
 }
 
+// >>>> Login form <<<<
 var getEmail = getUserData.email;
 var getPass = getUserData.password;
-
 function loginForm() {
   console.log(userEmail.value, userPass.value);
   var user = localStorage.getItem("user");
@@ -163,7 +165,7 @@ function loginForm() {
   }
   localStorage.setItem("user", true);
 }
-
+// Show Input Field Password
 function showPass() {
   if (userPass.type === "password") {
     userPass.type = "text";
@@ -173,28 +175,30 @@ function showPass() {
     passIcon.innerHTML = "lock";
   }
 }
-
+// >>>> Quit Quiz <<<<
 function quit() {
   location.reload();
 }
+// >>>> Enter Quiz <<<<
 function enterQuiz() {
   infoBox.style.display = "none";
   startBtn.style.display = "block";
 }
+// >>>> Start Quiz <<<<
 function startQuiz() {
   quizStart.style.display = "block";
   startBtn.style.display = "none";
   renderQuestions();
   document.documentElement.requestFullscreen();
 }
-
+// >>>> Restart Quiz <<<<
 function restart() {
   location.reload();
   login_form.style.display = "none";
   infoBox.style.display = "none";
   startBtn.style.display = "block";
 }
-
+// >>>> Render Questions <<<<
 function renderQuestions() {
   var question = document.getElementById("qustionsContainer");
   var options = document.getElementsByName("options");
@@ -259,7 +263,7 @@ function renderQuestions() {
   index++;
   qustionNo.innerHTML = index;
 }
-
+// >>>> Timer <<<<
 function startTimer(time) {
   counter = setInterval(timer, 1000);
   function timer() {
