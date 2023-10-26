@@ -206,6 +206,7 @@ input::-webkit-inner-spin-button {
 .showPass {
   cursor: pointer;
   user-select: none;
+  display: none;
 }
 
 .clickHere {
@@ -218,7 +219,7 @@ input::-webkit-inner-spin-button {
 }
 
 .emailPass {
-  width: 350px;
+  width: 450px;
   height: 200px;
   background-color: #fff;
   color: #007bff;

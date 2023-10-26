@@ -116,6 +116,11 @@ function backToForm() {
   animate.classList.remove("animate__flash");
 }
 
+passIcon.addEventListener("click", () => {
+  passIcon.style.display = "inlineBlock";
+  console.log("working");
+});
+
 // >>>> Login form <<<<
 var getEmail = getUserData.email;
 var getPass = getUserData.password;
@@ -153,12 +158,15 @@ function loginForm() {
     } else {
       passIcon.style.color = "#007bff";
       passIcon.style.cursor = "pointer";
-      Swal.fire({
-        title: "Wrong input",
-        text: "Please enter a valid Email & Password",
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top",
+        showConfirmButton: false,
+        timer: 1000,
+      });
+      Toast.fire({
         icon: "warning",
-        showCancelButton: false,
-        confirmButtonColor: "#3085d6",
+        title: "<h2>Invalid</h2><h2>ID : Password</h2>",
       });
       setTimeout(function () {
         animate.classList.add("animate__flash");
@@ -184,20 +192,6 @@ function quit() {
 }
 // >>>> Enter Quiz <<<<
 function enterQuiz() {
-  infoBox.style.display = "none";
-  startBtn.style.display = "block";
-}
-// >>>> Start Quiz <<<<
-function startQuiz() {
-  quizStart.style.display = "block";
-  startBtn.style.display = "none";
-  renderQuestions();
-  document.documentElement.requestFullscreen();
-}
-// >>>> Restart Quiz <<<<
-function restart() {
-  location.reload();
-  login_form.style.display = "none";
   infoBox.style.display = "none";
   startBtn.style.display = "block";
 }
@@ -277,4 +271,18 @@ function startTimer(time) {
       renderQuestions();
     }
   }
+}
+// >>>> Start Quiz <<<<
+function startQuiz() {
+  quizStart.style.display = "block";
+  startBtn.style.display = "none";
+  renderQuestions();
+  document.documentElement.requestFullscreen();
+}
+// >>>> Restart Quiz <<<<
+function restart() {
+  login_form.style.display = "none";
+  infoBox.style.display = "none";
+  startBtn.style.display = "block";
+  location.reload();
 }
