@@ -251,7 +251,9 @@ input::-webkit-inner-spin-button {
   font-weight: 400;
   padding: 10px;
 }
-
+.emailIcon   {
+  display: none;
+}
 /* <!-- Info Box --> */
 
 .info_box {

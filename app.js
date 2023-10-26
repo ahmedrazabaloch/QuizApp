@@ -53,6 +53,7 @@ var animate = document.querySelector("#animate");
 var hideBtn = document.querySelector(".hideBtn");
 var passIcon = document.querySelector(".showPass");
 var userEmail = document.getElementById("uEmail");
+var emailIcon = document.querySelector(".emailIcon");
 var userPass = document.getElementById("uPass");
 var infoBox = document.querySelector(".info_box");
 var quizStart = document.querySelector(".quiz_container");
@@ -95,6 +96,7 @@ getUserData = JSON.parse(getUserData);
 
 // >>>> Show localStorage Data <<<<
 userEmail.addEventListener("click", () => {
+  emailIcon.style.display = "block";
   animate.style.display = "block";
 });
 var remenberPass = document.getElementById("rePass");
@@ -120,7 +122,6 @@ function backToForm() {
 
 userPass.addEventListener("click", () => {
   passIcon.style.display = "block";
-  console.log("working");
 });
 
 // >>>> Login form <<<<
@@ -157,8 +158,6 @@ function loginForm() {
         title: "Signed in successfully",
       });
     } else {
-      // passIcon.style.color = "#007bff";
-      // passIcon.style.cursor = "pointer";
       const Toast = Swal.mixin({
         toast: true,
         position: "top",
