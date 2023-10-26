@@ -18,7 +18,7 @@
   <body>
     <!-- UserForm -->
     <div class="login_form">
-      <div class="form">
+      <div class="form animate__animated animate__fadeIn">
         <div class="title">Login</div>
         <span class="inputs">
           <span class="inputf">
@@ -35,7 +35,7 @@
             />
             <span class="label">Password</span>
             <span
-              class="material-icons icon showPass"
+              class="material-icons icon showPass animate__animated animate__fadeIn"
               onclick="showPass()"
               title="Show Password"
               >lock</span
@@ -52,7 +52,8 @@
         <div class="hideBtn">
           <button type="button" class="btn" onclick="loginForm()">Login</button>
           <div class="text">
-            New user? Create an account <a id="signUp" onclick="singUp()">Register</a>
+            New user? Create an account
+            <a id="signUp" onclick="singUp()">Register</a>
           </div>
           <p
             onclick="showPopup()"
@@ -62,7 +63,7 @@
             Click Here for <span>Email:Pass</span>
           </p>
         </div>
-        <div class="emailPass">
+        <div class="emailPass animate__animated animate__fadeIn">
           <div>
             <span>Email:</span>
             <p id="reEmail">ahmed@gmail.com</p>

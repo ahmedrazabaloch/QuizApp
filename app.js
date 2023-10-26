@@ -99,11 +99,13 @@ userEmail.addEventListener("click", () => {
 });
 var remenberPass = document.getElementById("rePass");
 var remenberEmail = document.getElementById("reEmail");
+var loginTitle = document.querySelector(".title");
 function showPopup() {
   emailPass.style.display = "flex";
   hideBtn.style.display = "none";
   inputs.style.display = "none";
   links.style.display = "none";
+  loginTitle.style.display = "none";
   remenberEmail.textContent = getUserData.email;
   remenberPass.textContent = getUserData.password;
 }
@@ -116,8 +118,8 @@ function backToForm() {
   animate.classList.remove("animate__flash");
 }
 
-passIcon.addEventListener("click", () => {
-  passIcon.style.display = "inlineBlock";
+userPass.addEventListener("click", () => {
+  passIcon.style.display = "block";
   console.log("working");
 });
 
@@ -125,7 +127,6 @@ passIcon.addEventListener("click", () => {
 var getEmail = getUserData.email;
 var getPass = getUserData.password;
 function loginForm() {
-  console.log(userEmail.value, userPass.value);
   var user = localStorage.getItem("user");
   if (!user) {
     const Toast = Swal.mixin({
@@ -156,8 +157,8 @@ function loginForm() {
         title: "Signed in successfully",
       });
     } else {
-      passIcon.style.color = "#007bff";
-      passIcon.style.cursor = "pointer";
+      // passIcon.style.color = "#007bff";
+      // passIcon.style.cursor = "pointer";
       const Toast = Swal.mixin({
         toast: true,
         position: "top",
