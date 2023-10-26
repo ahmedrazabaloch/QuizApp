@@ -196,6 +196,7 @@ function enterQuiz() {
   infoBox.style.display = "none";
   startBtn.style.display = "block";
 }
+
 // >>>> Render Questions <<<<
 function renderQuestions() {
   var question = document.getElementById("qustionsContainer");
@@ -236,13 +237,30 @@ function renderQuestions() {
     clearInterval(counter);
     resultbox.style.display = "flex";
     quizStart.style.display = "none";
-    var progressbar = document.querySelector(".progressBar");
-    progressbar.innerHTML = `
-      <p>${percetage}%</p>
-      `;
+
     scoreText.innerHTML = `
    <span>Score: <p>${score}</p>out of<p>${options.length + 1}</p><span>
     `;
+
+    var circularProgress = document.querySelector(".circular-progress"),
+      progressValue = document.querySelector(".progress-value");
+
+    var progressStartValue = 0,
+      progressEndValue = percetage,
+      speed = 25;
+
+    var progress = setInterval(() => {
+      progressStartValue++;
+
+      progressValue.textContent = `${progressStartValue}%`;
+      circularProgress.style.background = `conic-gradient(var(--primaryColor) ${
+        progressStartValue * 3.6
+      }deg, #ededed 0deg)`;
+
+      if (progressStartValue == progressEndValue) {
+        clearInterval(progress);
+      }
+    }, speed);
     return;
   }
   var questionValue = questions[index];
@@ -273,6 +291,7 @@ function startTimer(time) {
     }
   }
 }
+
 // >>>> Start Quiz <<<<
 function startQuiz() {
   quizStart.style.display = "block";

@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 :root {
-  /* --primaryColor: #007bff; */
-  /* --secondaryColor: #84c5fe; */
-  --primaryColor: #008970;
-  --secondaryColor: orange;
-  --lightColor: orange;
+  --primaryColor: #007bff;
+  --secondaryColor: #84c5fe;
+  --lightColor: #b8daff;
   --whiteColor: #fff;
 }
 
@@ -268,7 +266,7 @@ input::-webkit-inner-spin-button {
 .info_box .info-title {
   height: 60px;
   width: 100%;
-  border-bottom: 1px solid #b8daff;
+  border-bottom: 1px solid var(--lightColor);
   display: flex;
   align-items: center;
   padding: 0 30px;
@@ -300,7 +298,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
   justify-content: flex-end;
   padding: 0 30px;
-  border-top: 1px solid #b8daff;
+  border-top: 1px solid var(--lightColor);
 }
 
 .info_box .buttons button {
@@ -432,7 +430,7 @@ input::-webkit-inner-spin-button {
 .options:hover {
   color: #004085;
   background: #cce5ff;
-  border: 1px solid #b8daff;
+  border: 1px solid var(--lightColor);
 }
 /* <!-- Quiz Footer Next Button --> */
 .footer_container {
@@ -583,6 +581,32 @@ input::-webkit-inner-spin-button {
   font-size: larger;
   font-weight: 700;
   text-align: center;
+  color: var(--primaryColor);
+}
+
+.circular-progress {
+  position: relative;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primaryColor) 3.6deg, #ededed 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+.circular-progress::before {
+  content: "";
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.progress-value {
+  position: relative;
+  font-size: 26px;
+  font-weight: 700;
   color: var(--primaryColor);
 }
 
